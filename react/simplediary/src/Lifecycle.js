@@ -1,22 +1,22 @@
 import React,{useEffect,useState} from "react";
 
-const UnmountTest = () => {
+// const UnmountTest = () => {
 
-    useEffect(()=>{
-        console.log("Mount!");
+//     useEffect(()=>{
+//         console.log("Mount!");
 
-        return ()=>{
-            //Unmount 시점에 실행 되게 됨
+//         return ()=>{
+//             //Unmount 시점에 실행 되게 됨
 
-            console.log("unmount!");
+//             console.log("unmount!");
 
-        };
-    },[]);
+//         };
+//     },[]);
 
-    return (
-        <div> Unmount Testing Component</div>
-    )
-}
+//     return (
+//         <div> Unmount Testing Component</div>
+//     )
+// }
 
 
 
@@ -24,12 +24,12 @@ const UnmountTest = () => {
 
 const Lifecycle= () => {
 
-    // const [count, setCount] =useState(0);
-    // const [text, setText] =useState("");
+    const [count, setCount] =useState(0);
+    const [text, setText] =useState("");
 
-    // useEffect(()=>{
-    //     console.log("Mount!")
-    // },[]);
+    useEffect(()=>{
+        console.log("Mount!")
+    },[]);
 
 
     // useEffect(()=>{
@@ -49,23 +49,23 @@ const Lifecycle= () => {
     //     console.log(`text is update : ${text}`)
     // },[text]);
     
-    const [isVisible, setIsVisible] = useState(false);
-    const toggle = ()=> setIsVisible(!isVisible);
+    // const [isVisible, setIsVisible] = useState(false);
+    // const toggle = ()=> setIsVisible(!isVisible);
 
 
     return(
         <div style ={{padding: 20}}>
-            {/* <div>
+            <div>
                 {count}
                 <button onClick={()=>setCount(count+1)}>+</button>
             </div>
 
             <div>
                 <input value={text} onChange={(e)=> setText(e.target.value)}/>
-            </div>  */}
+            </div> 
 
-            <button onClick={toggle}>On/Off</button>
-            {isVisible && <UnmountTest/>}
+            {/* <button onClick={toggle}>On/Off</button>
+            {isVisible && <UnmountTest/>} */}
 
 
         </div>
