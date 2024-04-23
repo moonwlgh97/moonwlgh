@@ -1,16 +1,12 @@
 n, m = map(int,input().split())
 
-li = [True for i in range(m+1)]
+for i in range(n, m+1):
+    if i ==1:
+        continue
 
-for i in range(n,m):
-    j =2
-    while (i*j <= m):
-        if li[i*j] == True:
-            li[i*j] = False
+    else:
+        for j in range(2,int(i**0.5)+1):
+            if i % j  == 0:
+                break
         else:
-            continue
-        j+=1
-
-for i in range(n,m+1):
-    if li[i]:
-        print(i)
+            print(i)
